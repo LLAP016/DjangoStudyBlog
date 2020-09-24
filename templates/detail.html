@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+
+{% block contents %}
+<head>
+    <title>New</title>
+</head>
+
+<html>
+<div class="container">
+    <br>
+    <h2>자세한 내용을 알려주는 페이지입니다</h2>
+    <br><br>
+    <h3>{{ blog.title }}</h3>
+    <p>{{ blog.pub_date }}</p>
+    <p>{{ blog.body }}</p>
+</div>
+</body>
+</html>
+{% endblock %}
