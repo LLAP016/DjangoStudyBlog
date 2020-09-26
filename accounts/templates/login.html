@@ -1,13 +1,26 @@
-
 {% extends 'base.html' %}
-
+{% load socialaccount %}
+{% providers_media_js %}
 {% block contents %}
 <head>
     <title>login</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <style>
+        a { text-decoration: none; color: black; }
+        a:visited { text-decoration: none; }
+        a:hover { text-decoration: none; }
+        a:focus { text-decoration: none; }
+        a:hover, a:active { text-decoration: none; }
+    </style>
 </head>
+
 <div class="container">
 <h1>Login</h1>
 
+    {% if user.is_authenticated %}
+    {{user.username}} 님이 로그인 중
+
+    {% else %}
 <form method="POST" action = "{% url 'login' %}">
     {% csrf_token %}
 
@@ -21,7 +34,11 @@
     <br>
     <br>
     <input class="btn btn-primary" type="submit" value="Login">
+    <br>
+    <br>
+    <a href="{% provider_login_url 'google' %}"><i class="fa fa-google" style="font-size:36px"></i></a>
 </form>
+{% endif %}
 </div>
 
 {% endblock %}
