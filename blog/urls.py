@@ -9,4 +9,6 @@ urlpatterns = [
     path('new/', views.new, name="new"),
     path('create', views.create, name="create"),
     path('newblog/', views.blogpost, name="blogpost"),
+    path('update/<int:blog_id>', views.update, name="update"),
+    path('delete/<int:blog_id>', views.BlogDelete.as_view(), name="delete"),
 ]

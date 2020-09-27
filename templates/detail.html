@@ -8,11 +8,13 @@
 <html>
 <div class="container">
     <br>
-    <h2>자세한 내용을 알려주는 페이지입니다</h2>
+    <h3>본문 자세히 보기</h3>
     <br><br>
     <h3>{{ blog.title }}</h3>
     <p>{{ blog.pub_date }}</p>
     <p>{{ blog.body }}</p>
+    <a href="{% url 'update' blog.id %}">수정</a>
+    <a href="{% url 'delete' blog.id %}">삭제</a>
 </div>
 </body>
 </html>

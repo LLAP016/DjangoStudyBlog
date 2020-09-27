@@ -51,6 +51,7 @@ INSTALLED_APPS = [
 
     # provider
     'allauth.socialaccount.providers.google',
+    'imagekit',
 ]
 
 MIDDLEWARE = [
